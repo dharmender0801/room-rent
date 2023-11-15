@@ -1,38 +1,74 @@
-.App {
+nav {
+  background: rgb(0, 86, 167);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+}
+nav .left-side {
+  font-weight: 800;
+  font-size: 27px;
+  color: white;
+  flex: 1;
+}
+nav .center {
+  flex: 2;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav .right-side {
+  flex: 1;
+  text-align: right;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav .center .search-bar input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav .center .search-bar input[type="text"]:focus {
+  outline: none;
+  border-color: blue;
+}
+
+.text-center {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.search-bar {
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.search-bar i {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #555;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column; /* Stack items vertically */
+    padding: 10px; 
   }
-  to {
-    transform: rotate(360deg);
+
+  nav .left-side,
+  nav .right-side,
+  nav .center {
+    text-align: center; /* Center align all sections */
+    margin-bottom: 10px; /* Add margin for spacing between sections */
+  }
+
+  nav .center .search-bar {
+    text-align: center;
+  }
+
+  nav .center .search-bar input[type="text"] {
+    width: 100%; /* Full width for the input */
   }
 }
