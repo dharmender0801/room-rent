@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import Image from '../assets/download.jpeg';
 import { ModelType, modelData } from "../Service/Model";
 import { APICALL } from "../API-COM/ApiCall";
+import { useNavigate } from "react-router-dom";
 const SearchComp = () => {
     const [priceRange, setPriceRange] = useState(3000);
     const [contentList, setContentList] = useState(modelData);
     const [pageData, setPageData] = useState(ModelType.pagable)
     const [data, setData] = useState(ModelType.Data);
+    const navigate = useNavigate();
 
     const handlePriceRangeChange = (event: any) => {
         setPriceRange(event.target.value); // Update the price range value
@@ -24,10 +26,11 @@ const SearchComp = () => {
         console.log(JSON.stringify(pageData));
         APICALL.getPageData(pageData).then((res) => {
             console.log(res.data);
-    
+
             setData(res.data.data);
         }).catch((err) => {
             console.log(err);
+            navigate("/login");
         })
     }
 
@@ -64,16 +67,14 @@ const SearchComp = () => {
                             />
                         </div>
                         <div className="order-by gap-20-btm">
-                            {/* <h3>Sort</h3> */}
                             <label>Sort By:</label>
                             <select>
-                                <option value="default">Default</option>
+                                <option value="default">Relevance</option>
                                 <option value="price-low-to-high">Price Low to High</option>
                                 <option value="price-high-to-low">Price High to Low</option>
                             </select>
                         </div>
                         <div className="location-filter gap-20-btm">
-                            {/* <h3>Location Filter</h3> */}
                             <label>
                                 <i className="fas fa-map-marker-alt"></i>
                                 Location:</label>
@@ -82,11 +83,10 @@ const SearchComp = () => {
                     </div>
                 </div>
             </div>
-            <div className="center-container text-center">
+            <div className="center-container">
 
                 {
                     data.map((item) => {
-                        console.log(item)
                         return (
                             <>
                                 <div className="card">
@@ -121,7 +121,7 @@ const SearchComp = () => {
                                             <h3>{item.ownerName}</h3>
                                         </div>
                                         <div className="contact-right  justify-center g-20">
-                                            <button className="bg-blue btn">View Phone number</button>
+                                            <button className="btn-bdr">View Phone number</button>
                                             <button className="bg-blue btn">Contact</button>
                                         </div>
 

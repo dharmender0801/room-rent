@@ -1,8 +1,9 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FiAlignLeft } from "react-icons/fi";
 const NavBar = () => {
 
-    
+
     const navigate = useNavigate();
     const logout = () => {
         localStorage.clear();
@@ -11,7 +12,8 @@ const NavBar = () => {
     }
     return (
         <nav>
-            <div className="left-side">
+            <div className="left-side d-flex ">
+                <span className="mobile-nav "><FiAlignLeft /></span>
                 <Link to={"/"} className="custom-link" ><span>RoomRent</span></Link>
             </div>
             <div className="center">
@@ -20,7 +22,8 @@ const NavBar = () => {
                     <i className="fas fa-search"></i>
                 </div>
             </div>
-            <div className="right-side">
+            <div className="right-side text-center g-20">
+                <Link to={"/add-property"} className="custom-link" ><span>Add Property</span></Link>
                 <span onClick={logout}>{localStorage.getItem("name")}</span>
             </div>
 

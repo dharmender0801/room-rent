@@ -62,27 +62,85 @@ nav .center .search-bar input[type="text"]:focus {
   transform: translateY(-50%);
   color: #555;
 }
-
+.mobile-nav {
+  display: none;
+}
 @media screen and (max-width: 768px) {
   nav {
-    flex-direction: column; /* Stack items vertically */
-    padding: 10px;
+    display: flex;
+  }
+  nav .left-side {
+    padding-left: 0;
   }
 
-  nav .left-side,
-  nav .right-side,
-  nav .center {
-    text-align: center; /* Center align all sections */
-    margin-bottom: 10px; /* Add margin for spacing between sections */
+  nav .right-side {
+    display: none;
   }
-
-  nav .center .search-bar {
-    text-align: center;
-  }
-
   nav .center .search-bar input[type="text"] {
-    width: 100%; /* Full width for the input */
+    margin-left: 20%;
+    width: 70%;
   }
+  .mobile-nav {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+  .left-container {
+    display: none;
+  }
+  .right-container {
+    display: none;
+  }
+
+  .center-container {
+    width: 100%;
+    display: flex;
+  }
+  .search-container {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+  }
+  
+
+  
+.custom-left-side {
+  height: 100% !important;
+  width: 40% !important;
+  border-radius: 5px !important;
+}
+.custom-right-side {
+  width: 50%;
+  height: 100%;
+  padding: 0 20px;
+}
+.custom-left-side img {
+  width: 200px !important;
+  height: 100px !important;
+  /* display: block; */
+}
+.custom-card-content {
+  display: flex;
+  width: 50%;
+}
+.center-container {
+  width: 100% !important;
+  /* padding: 0px !important; */
+  gap: 10px;
+  /* background: rebeccapurple; */
+}
+
+.card {
+  /* background: #00fff2 !important; */
+  /* width: 50vh !important; */
+  width: 90% !important;
+  flex-direction: column;
+  display: flex;
+  align-self: center;
+  height: 35vh !important;
+}
 }
 
 .search-container {
@@ -232,11 +290,9 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .custom-left-side {
-  /* flex: 1; */
   height: 40vh;
   width: 40%;
   border-radius: 5px;
-  /* background: blue; */
   overflow: hidden;
 }
 
@@ -264,9 +320,6 @@ input[type="range"]::-moz-range-thumb {
   margin-bottom: 10px;
 }
 
-.custom-price-details span {
-}
-
 .custom-right-side p {
   margin-top: 0;
 }
@@ -290,6 +343,12 @@ input[type="range"]::-moz-range-thumb {
 .sps-btn {
   align-items: center;
   justify-content: space-between;
+}
+.mr-8 {
+  margin-right: 8px;
+}
+.f-1 {
+  flex: 1;
 }
 .contact-container {
   width: 100%;
@@ -315,13 +374,26 @@ input[type="range"]::-moz-range-thumb {
   padding: 0 10px;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
+.btn-bdr {
+  color: rgb(0, 86, 167);
+  background: transparent;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid rgb(0, 86, 167);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn-bdr:hover {
+  color: white;
+  background: rgb(0, 86, 167);
+}
 .login-container {
   background-color: #4d4b4b5d;
   padding: 20px;
   height: 100vh;
-
 }
 .login-container label {
   display: block;
@@ -343,7 +415,7 @@ input[type="password"] {
   background-color: white;
   margin: 0 auto;
   height: 400px;
-  box-shadow:0 0 1px 1px rgba(36, 30, 30, 0.1);
+  box-shadow: 0 0 1px 1px rgba(36, 30, 30, 0.1);
   text-align: center;
   /* overflow-y: auto; */
 }
@@ -366,9 +438,177 @@ input[type="password"] {
   flex-direction: column;
 }
 
-
 .custom-link {
   text-decoration: none; /* Remove default underline */
   color: inherit; /* Inherit color from parent */
   /* Add any other custom styles you want for the link */
+}
+/* .prop-container {
+  width: 100%;
+  height: 100vh;
+  background: #0000ff;
+}
+.w-50 {
+  width: 50%;
+  height: 100%;
+  border: 1px solid black
+  background: red;
+}
+.bg-cyan {
+  background: #00fff2;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+.prop-left {
+  padding: 20px;
+}
+.prop-left label {
+  margin-bottom: 5px;
+}
+.prop-left input[type="text"],
+input[type="number"],
+textarea,
+select,
+button {
+  padding: 10px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.w-70 {
+  width: 70%;
+  height: 100%;
+}
+.bx-sdow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.p-10 {
+  padding: 10px;
+}
+.br-5 {
+  border-radius: 5px;
+}
+
+.checkmark-list {
+  list-style: none;
+
+.checkmark-list li::before {
+  content: "\2713"; 
+  margin-right: 5px; 
+} */
+/* Overall Layout and Structure */
+.prop-container {
+  display: flex;
+  justify-content: space-between;
+  background: #fafcff;
+  align-items: center;
+  width: 100%;
+  /* max-width: 1200px;  */
+  margin: 0 auto;
+}
+
+.prop-left {
+  width: 60%; 
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+  z-index: 3;
+}
+
+.prop-right {
+  width: 40%; 
+  text-align: center;
+  padding: 20px;
+  /* background-color: #fff; */
+  border-radius: 5px;
+}
+
+/* Form Styling */
+.prop-left form {
+  font-family: sans-serif;
+}
+
+.prop-left label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.prop-left input[type="text"],
+.prop-left input[type="number"],
+.prop-left select,
+.prop-left textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.prop-left .sps-btn {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.prop-left .sps-btn div {
+  width: 45%;
+}
+
+.prop-left button[type="button"] {
+  background-color: #e5e5e5;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.prop-left button[type="button"]:hover {
+  background-color: #ccc;
+}
+
+.prop-left .btn {
+  background-color: #007bff; /* Primary blue color */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Right-Side Styling */
+.prop-right h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.checkmark-list {
+  list-style: none;
+  padding: 0;
+  align-self: center;
+  text-align: start;
+}
+
+
+.checkmark-list li {
+  margin-bottom: 5px;
+}
+
+.checkmark-list li::before {
+  content: '\2713';
+  margin-right: 5px;
+}
+
+
+.bx-sdow{
+  width: 60%;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
 }

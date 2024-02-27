@@ -6,6 +6,7 @@ import SearchComp from './Component/Search';
 import Login from './Component/Login';
 import { Route, Routes } from 'react-router-dom';
 import DefaultLayout from './Default/DefaultLayout';
+import AddProp from './Component/AddProperty';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
       <Routes key={'r-1'}>
         <Route key={'private-routs'} element={<DefaultLayout />} >
           <Route key={'pt-r-2'} path={"/"} element={<SearchComp />} />
+          <Route key={'pt-r-2'} path={"/add-property"} element={<AddProp />} />
+
 
         </Route>
       </Routes>
