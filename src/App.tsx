@@ -7,10 +7,12 @@ import Login from './Component/Login';
 import { Route, Routes } from 'react-router-dom';
 import DefaultLayout from './Default/DefaultLayout';
 import AddProp from './Component/AddProperty';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
     <>
+      <ToastContainer position="top-right" autoClose={3000} />
       <Routes key={'r-2'}>
         <Route path='/login' element={<Login />} >
         </Route>

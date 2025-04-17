@@ -1,10 +1,16 @@
 
-export const Domain = "http://192.168.2.247:8080"
+export const Domain = "http://localhost:8080"
 
 const LoginAPI = `${Domain}/api/auth/v1/login`;
-const getPageAPI = `${Domain}/api/user/v1/list`
+const getPageAPI = `${Domain}/api/upload/v1/list`
+const getUserAPI = `${Domain}/api/auth/v1/list`
+const uploadFile = `${Domain}/api/upload/uploadFiles`
+const accessSendAPi = `${Domain}/api/upload/v1/access`
 
 export const APICONFIG = {
     LoginAPI,
-    getPageAPI
+    getPageAPI,
+    uploadFile,
+    getUserAPI,
+    accessSendAPi
 }

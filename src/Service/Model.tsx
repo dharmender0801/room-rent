@@ -41,7 +41,7 @@ const pagable =
 
 {
     pageNumber: 0,
-    pageSize: 100,
+    pageSize: 10000,
     column: null,
     sort: "",
     text: null,
