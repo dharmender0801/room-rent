@@ -72,6 +72,15 @@ const ResetPassword = (body: any) => {
     return axios.post(APICONFIG.Reset, body, config);
 }
 
+const updatePassword = (body: any) => {
+    const config = {
+        headers: {
+            // Authorization: localStorage.getItem('token'),
+            'Content-Type': 'application/json',
+        },
+    };
+    return axios.post(APICONFIG.updatePassword, body, config);
+}
 
 export const APICALL = {
     Login,
@@ -81,6 +90,7 @@ export const APICALL = {
     sendAccess,
     addCommentToFile,
     Signup,
-    ResetPassword
+    ResetPassword,
+    updatePassword
 
 }

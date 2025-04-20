@@ -9,6 +9,7 @@ const accessSendAPi = `${Domain}/api/upload/v1/access`
 const addCommentToFile = `${Domain}/api/upload/v1/addComment`
 const Signup = `${Domain}/api/auth/v1/signup`
 const Reset = `${Domain}/api/auth/v1/reset`
+const updatePassword = `${Domain}/api/auth/v1/updatePassword`
 
 export const APICONFIG = {
     LoginAPI,
@@ -18,5 +19,6 @@ export const APICONFIG = {
     accessSendAPi,
     addCommentToFile,
     Signup,
-    Reset
+    Reset,
+    updatePassword
 }
