@@ -6,11 +6,17 @@ const getPageAPI = `${Domain}/api/upload/v1/list`
 const getUserAPI = `${Domain}/api/auth/v1/list`
 const uploadFile = `${Domain}/api/upload/uploadFiles`
 const accessSendAPi = `${Domain}/api/upload/v1/access`
+const addCommentToFile = `${Domain}/api/upload/v1/addComment`
+const Signup = `${Domain}/api/auth/v1/signup`
+const Reset = `${Domain}/api/auth/v1/reset`
 
 export const APICONFIG = {
     LoginAPI,
     getPageAPI,
     uploadFile,
     getUserAPI,
-    accessSendAPi
+    accessSendAPi,
+    addCommentToFile,
+    Signup,
+    Reset
 }

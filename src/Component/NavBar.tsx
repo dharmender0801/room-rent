@@ -25,7 +25,7 @@ const NavBar = () => {
             <div className="right-side text-center g-20">
                 <Link to={"/add-property"} className="custom-link" ><span>Upload Pdf</span></Link>
                 <Link to={"/"} className="custom-link" ><span>View Pdf</span></Link>
-                {/* <span onClick={logout}>{localStorage.getItem("name")}</span> */}
+                <span style={{cursor:"pointer"}} onClick={logout}>Log Out</span>
             </div>
 
         </nav>

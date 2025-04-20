@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { APICALL } from "../API-COM/ApiCall";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
     const navigate = useNavigate();
     const [user, setUser] = useState('');
@@ -41,6 +41,8 @@ const Login = () => {
                         <input onChange={password} type="password" id="password" name="password" required />
                     </div>
                     <button onClick={subMit} type="submit">Login</button>
+                    <Link to={"/sign-up"} className="custom-link" ><span>Sign Up</span></Link>
+                    <Link to={"/reset-password"} className="custom-link"><span>Forgot Password?</span></Link>
                 </form>
             </div >
 
